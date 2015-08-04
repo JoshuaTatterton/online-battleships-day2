@@ -1,9 +1,13 @@
-<% if !@game %>
-  <% game = Game.new Player, Board %>
-<% else %>
-  <% game = @game %>
-<% end %>
+  <% if @location %>
+    <%= session[:game].player_1.shoot @location.to_sym %>
+  <% end %>
 <div>
-  <%= game.opponent_board_view game.player_1 %>
+  <pre>
+  <%= session[:game].opponent_board_view session[:game].player_1 %>
+  </pre>
   Please select where to fire.
+  <form action="/vscomputer" method="get">
+    <input type="text" name="location">
+    <input type="submit" value="Fire">
+  </form>
 </div>

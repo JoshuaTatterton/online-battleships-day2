@@ -36,4 +36,13 @@ feature 'Playing a game' do
     click_link 'VS Computer'
     expect(page).to have_content board
   end
+  scenario "shooting at the board" do
+    visit '/'
+    click_link 'New Game'
+    click_button "Submit"
+    click_link 'VS Computer'
+    fill_in "location", with:"A1"
+    click_button "Fire"
+    expect(page).to have_content "miss"
+  end
 end
