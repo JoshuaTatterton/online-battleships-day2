@@ -1,6 +1,6 @@
 <div>
 	<% if @name %>
-    Hello <%= @name %>
+    Hello <%= @name == "" ? "Player1" : @name %>
   <% else %>
     What's your name?
     <form action="/newgame">
