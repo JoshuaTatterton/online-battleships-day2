@@ -7,6 +7,7 @@ class BattleshipsWeb < Sinatra::Base
     erb :index
   end
   get '/newgame' do
+    @name = params[:name]
   	erb :newgame
   end
 	

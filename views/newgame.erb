@@ -1,3 +1,11 @@
 <div>
-	What's your name?
+	<% if @name %>
+    Hello <%= @name %>
+  <% else %>
+    What's your name?
+    <form action="/newgame">
+      <input type="text" name="name">
+      <input type="submit" value="Submit">
+    </form>
+  <% end %>
 </div>
