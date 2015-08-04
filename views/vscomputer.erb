@@ -1,0 +1,9 @@
+<% if !@game %>
+  <% game = Game.new Player, Board %>
+<% else %>
+  <% game = @game %>
+<% end %>
+<div>
+  <%= game.opponent_board_view game.player_1 %>
+  Please select where to fire.
+</div>
